@@ -128,7 +128,7 @@ app.get('/search/:text', (req, res) => {
     }
 });
 
-// set up for local Mongo
+// set up for local Mongo : Uncomment if you want to use mongodb locally
 // Uncomment it when using Mongo on EC2
 // function mongoConnect() {
 //     return new Promise((resolve, reject) => {

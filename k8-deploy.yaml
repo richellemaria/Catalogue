@@ -63,7 +63,7 @@ spec:
   - host: robot-frontend.b54-roboshop.online
     http:
       paths:
-      - path: "/api/catalogue/"
+      - path: "/"
         pathType: Prefix
         backend:
           service:

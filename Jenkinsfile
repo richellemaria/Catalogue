@@ -1,6 +1,19 @@
-@Library('roboshop-shared-library') _
-
-env.COMPONENT="catalogue"
-env.APP_TYPE="nodejs"
-// nodejs()
-docker()
+pipeline{
+  agent {
+      label 'WS'
+  }
+  stages{
+    stage('Lint Check'){
+        steps{
+            sh "echo installing jslint"
+            sh "npm i jslint"
+            sh "node_modules/jslint/bin/jslint.js server.js || true"
+        }
+    }
+    stage('Code Complie'){
+        steps{
+              sh "npm install"
+        }
+    }
+  }
+}   
